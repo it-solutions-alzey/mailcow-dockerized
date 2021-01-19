@@ -2,11 +2,11 @@ version: '2.1'
 services:
   nginx-mailcow
     environment:
-      - VIRTUAL_HOST=${MAILCOW_HOSTNAME}
+      - VIRTUAL_HOST=mail.it-solutions-alzey.de
       - VIRTUAL_PORT=8080
       - VIRTUAL_PROTO=http
-      - LETSENCRYPT_HOST=${MAILCOW_HOSTNAME}
-      - LETSENCRYPT_EMAIL=mail@example.org
+      - LETSENCRYPT_HOST=mail.it-solutions-alzey.de
+      - LETSENCRYPT_EMAIL=webmaster@it-solutions-alzey.de
     volumes:
 #      - /opt/docker/nginx-proxy/mail.it-solutions-alzey.de/fullchain.pem:/etc/ssl/mail/cert.pem:ro
 #      - /opt/docker/nginx-proxy/mail.it-solutions-alzey.de/key.pem:/etc/ssl/mail/key.pem:ro
