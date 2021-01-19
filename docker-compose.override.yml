@@ -7,9 +7,9 @@ services:
       - VIRTUAL_PROTO=http
       - LETSENCRYPT_HOST=mail.it-solutions-alzey.de
       - LETSENCRYPT_EMAIL=webmaster@it-solutions-alzey.de
-#    volumes:
-#      - /opt/docker/nginx-proxy/mail.it-solutions-alzey.de/fullchain.pem:/etc/ssl/mail/cert.pem:ro
-#      - /opt/docker/nginx-proxy/mail.it-solutions-alzey.de/key.pem:/etc/ssl/mail/key.pem:ro
+    volumes:
+      - /opt/docker/nginx-proxy/mail.it-solutions-alzey.de/fullchain.pem:/etc/ssl/mail/cert.pem:ro
+      - /opt/docker/nginx-proxy/mail.it-solutions-alzey.de/key.pem:/etc/ssl/mail/key.pem:ro
     expose:
       - "443"
     networks:
@@ -17,16 +17,16 @@ services:
         aliases:
           - mail.it-solutions-alzey.de
         
-#  postfix-mailcow:
-#    volumes:
-#      - /opt/docker/nginx-proxy/mail.it-solutions-alzey.de/fullchain.pem:/etc/ssl/mail/cert.pem:ro
-#      - /opt/docker/nginx-proxy/mail.it-solutions-alzey.de/key.pem:/etc/ssl/mail/key.pem:ro
+  postfix-mailcow:
+    volumes:
+      - /opt/docker/nginx-proxy/mail.it-solutions-alzey.de/fullchain.pem:/etc/ssl/mail/cert.pem:ro
+      - /opt/docker/nginx-proxy/mail.it-solutions-alzey.de/key.pem:/etc/ssl/mail/key.pem:ro
       
       
-#  dovecot-mailcow:
-#    volumes:
-#    - /opt/docker/nginx-proxy/mail.it-solutions-alzey.de/fullchain.pem:/etc/ssl/mail/cert.pem:ro
-#    - /opt/docker/nginx-proxy/mail.it-solutions-alzey.de/key.pem:/etc/ssl/mail/key.pem:ro
+  dovecot-mailcow:
+    volumes:
+    - /opt/docker/nginx-proxy/mail.it-solutions-alzey.de/fullchain.pem:/etc/ssl/mail/cert.pem:ro
+    - /opt/docker/nginx-proxy/mail.it-solutions-alzey.de/key.pem:/etc/ssl/mail/key.pem:ro
 
 networks:
   nginx-proxy_service_network:
